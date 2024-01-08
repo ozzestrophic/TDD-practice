@@ -64,4 +64,38 @@ function cipherUpper(letter, key) {
   return String.fromCharCode(code);
 }
 
-export { capitalize, reverseString, calculator, ceasarCipher };
+function analyzeArray(array) {
+  return {
+    average: average(array),
+    min: getMin(array),
+    max: getMax(array),
+    length: array.length,
+  };
+}
+
+function average(array) {
+  const sum = array.reduce(getSum);
+  return sum / array.length;
+
+  function getSum(total, num) {
+    return total + num;
+  }
+}
+
+function getMin(array) {
+  let min = array[0];
+  array.forEach((item) => {
+    if (item < min) min = item;
+  });
+  return min;
+}
+
+function getMax(array) {
+  let max = array[0];
+  array.forEach((item) => {
+    if (item > max) max = item;
+  });
+  return max;
+}
+
+export { capitalize, reverseString, calculator, ceasarCipher, analyzeArray };
