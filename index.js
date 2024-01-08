@@ -4,4 +4,4 @@ function capitalize(string) {
   return capitalized;
 }
 
-export default capitalize;
+export { capitalize };

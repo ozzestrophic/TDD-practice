@@ -1,5 +1,9 @@
-import capitalize from "./index.js";
+import { capitalize } from "./index.js";
 
-test("Capitalize", () => {
-  expect(capitalize("ahmed").toBe("Ahmed"));
+test("Capitalize name", () => {
+  expect(capitalize("ahmed")).toBe("Ahmed");
+});
+
+test("Capitalize spaced string", () => {
+  expect(capitalize("   this is some space")).toBe("This is some space");
 });
