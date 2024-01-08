@@ -1,7 +1,14 @@
 function capitalize(string) {
   string = string.trimStart();
-  let capitalized = string.replace(string.at(0), string.at(0).toUpperCase());
-  return capitalized;
+  return string.replace(string.at(0), string.at(0).toUpperCase());
 }
 
-export { capitalize };
+function reverseString(string) {
+  let reversedString = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    reversedString = reversedString.concat(string.at(i));
+  }
+  return reversedString;
+}
+
+export { capitalize, reverseString };
