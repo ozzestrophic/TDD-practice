@@ -1,4 +1,4 @@
-import { capitalize, reverseString } from "./index.js";
+import { capitalize, reverseString, calculator } from "./index.js";
 
 test("Capitalize name", () => {
   expect(capitalize("ahmed")).toBe("Ahmed");
@@ -13,17 +13,17 @@ test("reverse string", () => {
 });
 
 test("calculator add", () => {
-  expect(calculator.add(2 + 2)).toBe(4);
+  expect(calculator.add(2, 2)).toBe(4);
 });
 
 test("calculator subtract", () => {
-  expect(calculator.subtract(4 - 2)).toBe(2);
+  expect(calculator.subtract(4, 2)).toBe(2);
 });
 
 test("calculator multiply", () => {
-  expect(calculator.multiply(2 * 2)).toBe(4);
+  expect(calculator.multiply(2, 2)).toBe(4);
 });
 
 test("calculator divide", () => {
-  expect(calculator.divide(4 / 2)).toBe(2);
+  expect(calculator.divide(4, 2)).toBe(2);
 });
