@@ -29,4 +29,39 @@ const calculator = {
   },
 };
 
-export { capitalize, reverseString, calculator };
+function ceasarCipher(string, key) {
+  let ciphered = "";
+
+  const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  for (const letter of string) {
+    if (lowerCase.includes(letter)) {
+      let newLetter = cipherLower(letter, key);
+      ciphered = ciphered.concat(newLetter);
+    } else if (upperCase.includes(letter)) {
+      let newLetter = cipherUpper(letter, key);
+      ciphered = ciphered.concat(newLetter);
+    } else {
+      ciphered = ciphered.concat(letter);
+    }
+  }
+  return ciphered;
+}
+
+function cipherLower(letter, key) {
+  let code = letter.charCodeAt(0) + key;
+  while (code > "z".charCodeAt(0)) {
+    code = code - 26;
+  }
+  return String.fromCharCode(code);
+}
+function cipherUpper(letter, key) {
+  let code = letter.charCodeAt(0) + key;
+  while (code > "Z".charCodeAt(0)) {
+    code = code - 26;
+  }
+  return String.fromCharCode(code);
+}
+
+export { capitalize, reverseString, calculator, ceasarCipher };

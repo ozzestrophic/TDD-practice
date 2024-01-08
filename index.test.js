@@ -1,4 +1,9 @@
-import { capitalize, reverseString, calculator } from "./index.js";
+import {
+  capitalize,
+  reverseString,
+  calculator,
+  ceasarCipher,
+} from "./index.js";
 
 test("Capitalize name", () => {
   expect(capitalize("ahmed")).toBe("Ahmed");
@@ -26,4 +31,16 @@ test("calculator multiply", () => {
 
 test("calculator divide", () => {
   expect(calculator.divide(4, 2)).toBe(2);
+});
+
+test("cipher lower case", () => {
+  expect(ceasarCipher("abcxyz", 3)).toBe("defabc");
+});
+
+test("cipher upper case", () => {
+  expect(ceasarCipher("ABCXYZ", 3)).toBe("DEFABC");
+});
+
+test("cipher don't change punc", () => {
+  expect(ceasarCipher("abc, XYZ !", 3)).toBe("def, ABC !");
 });
